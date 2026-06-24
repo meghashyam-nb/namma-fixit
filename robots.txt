@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nammafixit.com/sitemap.xml
