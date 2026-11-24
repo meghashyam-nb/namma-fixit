@@ -457,6 +457,16 @@ footer{background:#fff;border-top:1px solid var(--border);padding:56px 0 28px}
 .mcb-call{background:var(--brand)}
 .mcb-wa{background:var(--green)}
 
+/* Detailed job list per service */
+.svcdetail{padding:88px 0;background:var(--bg)}
+.sd-block{margin-top:30px}
+.sd-head{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.sd-ico{width:34px;height:34px;border-radius:9px;background:var(--brand-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.sd-head h3{font-size:.95rem;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.sd-grid{display:flex;flex-wrap:wrap;gap:8px}
+.sd-item{font-size:.78rem;font-weight:600;color:var(--ink-2);background:#fff;border:1.5px solid var(--border);padding:8px 14px;border-radius:50px;text-decoration:none;cursor:pointer;transition:border-color .2s,color .2s,background .2s,transform .2s}
+.sd-item:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-light);transform:translateY(-2px)}
+
 /* Localities — local SEO */
 .localities{padding:80px 0;background:var(--bg)}
 .loc-block{margin-top:34px}
@@ -554,6 +564,7 @@ section,nav,footer,.ann-bar,.emergency,.cta-wrap,.stats-strip{position:relative;
     </a>
     <div class="nav-links">
       <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#jobs">All Jobs</a>
       <a class="nav-link" href="#areas">Areas</a>
       <a class="nav-link" href="#pricing">Pricing</a>
       <a class="nav-link" href="#how">How It Works</a>
@@ -578,6 +589,7 @@ section,nav,footer,.ann-bar,.emergency,.cta-wrap,.stats-strip{position:relative;
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#jobs" onclick="closeMobileMenu()">All Jobs</a>
   <a href="#areas" onclick="closeMobileMenu()">Areas We Serve</a>
   <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
   <a href="#how" onclick="closeMobileMenu()">How It Works</a>
@@ -946,6 +958,214 @@ section,nav,footer,.ann-bar,.emergency,.cta-wrap,.stats-strip{position:relative;
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ██ DETAILED JOB LIST ██ -->
+<section class="svcdetail" id="jobs">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Every Job We Do</div>
+      <h2 class="sec-title">Exactly what we can fix</h2>
+      <p class="sec-sub">From a single switchboard replacement to a full interior fit-out. Tap the job you need and it opens a WhatsApp message already filled in — no typing, no explaining twice.</p>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">⚡</span><h3>Electrical work</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Switchboard replacement')">Switchboard replacement</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: MCB and fuse box repair')">MCB &amp; fuse box repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: House wiring and rewiring')">House wiring &amp; rewiring</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Short circuit repair')">Short circuit repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Fan installation or repair')">Fan installation &amp; repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Light and LED fitting')">Light &amp; LED fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Power socket installation')">Power socket installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Inverter installation')">Inverter installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Voltage stabiliser setup')">Voltage stabiliser setup</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Chandelier installation')">Chandelier installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Doorbell installation')">Doorbell installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Earthing work')">Earthing work</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Geyser electrical connection')">Geyser connection</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Power failure in my house')">Power failure</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Electrical safety inspection')">Safety inspection</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🚿</span><h3>Plumbing</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Tap and mixer replacement')">Tap &amp; mixer replacement</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Pipe leak repair')">Pipe leak repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Blocked drain cleaning')">Blocked drain cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Toilet or commode repair')">Toilet &amp; commode repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Washbasin installation')">Washbasin installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Kitchen sink repair')">Kitchen sink repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Shower and bathroom fitting')">Shower &amp; bath fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Water motor or pump repair')">Motor &amp; pump repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Overhead water tank fitting')">Water tank fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Sewage line blockage')">Sewage line blockage</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Geyser installation or repair')">Geyser installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Flush tank repair')">Flush tank repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Water meter fitting')">Water meter fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Low water pressure')">Low water pressure</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">❄️</span><h3>AC service &amp; repair</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC servicing')">AC servicing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC gas refill')">AC gas refill</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC installation')">AC installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC uninstallation')">AC uninstallation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! My AC is not cooling')">AC not cooling</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! My AC is leaking water')">AC water leakage</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC compressor repair')">Compressor repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC PCB or circuit repair')">PCB &amp; circuit repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC deep cleaning')">AC deep cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Window AC service')">Window AC service</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Split AC service')">Split AC service</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: AC annual maintenance contract')">Annual maintenance</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🔨</span><h3>Carpentry</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Door repair and alignment')">Door repair &amp; alignment</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Door lock replacement')">Door lock replacement</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Window repair')">Window repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Furniture repair')">Furniture repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Modular kitchen fitting')">Modular kitchen fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Wardrobe and cupboard work')">Wardrobe &amp; cupboard</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Bed and sofa repair')">Bed &amp; sofa repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Drawer and hinge replacement')">Drawer &amp; hinge fixing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Curtain rod fitting')">Curtain rod fitting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Shelf installation')">Shelf installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Wooden flooring')">Wooden flooring</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Custom furniture making')">Custom furniture</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🎨</span><h3>Painting &amp; finishing</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Full home painting')">Full home painting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Single room painting')">Single room painting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Interior wall painting')">Interior wall painting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Exterior painting')">Exterior painting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Texture and designer finish')">Texture &amp; designer finish</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Putty and primer work')">Putty &amp; primer work</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Waterproof coating')">Waterproof coating</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Damp and seepage treatment')">Damp &amp; seepage treatment</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Ceiling painting')">Ceiling painting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Wood polishing')">Wood polishing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Grill and metal painting')">Grill &amp; metal painting</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🧹</span><h3>Home cleaning</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Full home deep cleaning')">Full home deep cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Bathroom deep cleaning')">Bathroom deep cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Kitchen deep cleaning')">Kitchen deep cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Sofa shampooing')">Sofa shampooing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Mattress cleaning')">Mattress cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Move-in or move-out cleaning')">Move-in / move-out</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Water tank cleaning')">Water tank cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Floor scrubbing')">Floor scrubbing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Window and glass cleaning')">Window &amp; glass cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Post-construction cleaning')">Post-construction cleaning</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">📹</span><h3>CCTV &amp; security</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: CCTV camera installation')">CCTV camera installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: CCTV repair and servicing')">CCTV repair &amp; servicing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: DVR or NVR setup')">DVR / NVR setup</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Mobile remote viewing setup')">Remote viewing setup</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Video door phone installation')">Video door phone</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Intercom installation')">Intercom installation</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Digital door lock fitting')">Digital door lock</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Biometric lock installation')">Biometric lock</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Camera relocation')">Camera relocation</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🔧</span><h3>Appliance repair</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Washing machine repair')">Washing machine repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Refrigerator repair')">Refrigerator repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Microwave repair')">Microwave repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Geyser repair')">Geyser repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Chimney repair and cleaning')">Chimney repair &amp; cleaning</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Water purifier or RO service')">Water purifier / RO</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Gas stove repair')">Gas stove repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Induction stove repair')">Induction stove repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Mixer grinder repair')">Mixer grinder repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: TV wall mounting')">TV wall mounting</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Dishwasher repair')">Dishwasher repair</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🐛</span><h3>Pest control</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Cockroach control')">Cockroach control</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Termite treatment')">Termite treatment</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Bed bug treatment')">Bed bug treatment</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Rodent and rat control')">Rodent &amp; rat control</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Mosquito control')">Mosquito control</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Ant control')">Ant control</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Lizard control')">Lizard control</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Wood borer treatment')">Wood borer treatment</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Pre-construction anti-termite treatment')">Anti-termite (pre-construction)</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: General disinfection')">General disinfection</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🧱</span><h3>Masonry &amp; brickwork</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Brick and block wall construction')">Brick &amp; block wall</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Plastering and re-plastering')">Plastering</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Compound wall repair')">Compound wall repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Terrace waterproofing')">Terrace waterproofing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Crack sealing')">Crack sealing</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Tile laying and repair')">Tile laying &amp; repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Concrete work')">Concrete work</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Bathroom slope correction')">Bathroom slope correction</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Sunshade repair')">Sunshade repair</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Septic tank construction')">Septic tank work</a>
+      </div>
+    </div>
+
+    <div class="sd-block reveal">
+      <div class="sd-head"><span class="sd-ico">🪵</span><h3>Ply &amp; interior work</h3></div>
+      <div class="sd-grid">
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: False ceiling')">False ceiling</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Gypsum board work')">Gypsum board work</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: POP work')">POP work</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Plywood partition wall')">Plywood partition</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: PVC panel installation')">PVC panelling</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: WPC panel installation')">WPC panelling</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Wall panelling')">Wall panelling</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Loft construction')">Loft construction</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Office partition work')">Office partition</a>
+        <a class="sd-item" href="#" onclick="return openWA('Hi! I need help with: Complete modular interior fit-out')">Modular interior fit-out</a>
+      </div>
+    </div>
+
+    <p class="loc-note">
+      Need something not listed here? We take on most home repair and fit-out work —
+      <a href="tel:+917349148609">call +91 73491 48609</a> or
+      <a href="#" onclick="return openWA('Hi! I have a job that is not listed on your website. Can you help?')">describe it on WhatsApp</a>
+      and we'll tell you straight away whether we can do it.
+    </p>
   </div>
 </section>
 
