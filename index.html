@@ -161,7 +161,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" defer></script>
   <style>
-:root{--brand:#1B4FD8;--brand-dark:#1540B0;--brand-light:#EEF3FF;--ink:#111827;--ink-2:#374151;--muted:#6B7280;--border:#E5E7EB;--bg:#F9FAFB;--surface:#fff;--green:#25D366;--green-dk:#1DA851;--radius-xl:16px;--radius-lg:12px;--shadow-sm:0 1px 4px rgba(0,0,0,.07);--shadow-md:0 4px 18px rgba(0,0,0,.09);--shadow-lg:0 20px 50px rgba(0,0,0,.12);--ease:cubic-bezier(.25,.46,.45,.94)}
+:root{--brand:#1B4FD8;--brand-dark:#1540B0;--brand-light:#EEF3FF;--ink:#111827;--ink-2:#374151;--muted:#6B7280;--border:#E8EAED;--bg:#F5F5F7;--surface:#fff;--green:#25D366;--green-dk:#1DA851;--radius-xl:22px;--radius-lg:16px;--radius-sm:12px;--shadow-sm:0 1px 2px rgba(16,24,40,.04),0 2px 8px rgba(16,24,40,.04);--shadow-md:0 1px 2px rgba(16,24,40,.04),0 6px 16px rgba(16,24,40,.06),0 12px 28px rgba(16,24,40,.05);--shadow-lg:0 2px 4px rgba(16,24,40,.03),0 12px 28px rgba(16,24,40,.08),0 32px 64px rgba(16,24,40,.07);--ease:cubic-bezier(.32,.72,0,1);--spring:cubic-bezier(.34,1.56,.64,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -300,18 +300,30 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.07)}
 .trust-label{font-size:.77rem;color:rgba(255,255,255,.45);line-height:1.35}
 .trust-label strong{color:rgba(255,255,255,.85);font-weight:700;display:block;font-size:.8rem}
 
-/* Scroll reveals */
-.reveal{animation:scrollReveal .6s ease both;animation-play-state:paused}
+/* Scroll reveals — content settles into place
+   fill-mode is backwards, not both: a forwards/both fill keeps overriding
+   transform after the animation ends, which kills every :hover and :active lift */
+.reveal{animation:scrollReveal .75s var(--ease) backwards;animation-play-state:paused}
 .reveal.visible{animation-play-state:running}
-.reveal.d1{animation-delay:.1s}.reveal.d2{animation-delay:.2s}.reveal.d3{animation-delay:.3s}.reveal.d4{animation-delay:.4s}
-@keyframes scrollReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero-location{animation:heroIn .7s .1s ease both}
-.hero h1{animation:heroIn .9s .2s ease both}
-.hero-tagline{animation:heroIn .8s .35s ease both}
-.hero-search{animation:heroIn .7s .5s ease both}
-.cat-grid{animation:heroIn .7s .62s ease both}
-.hero-trust{animation:heroIn .7s .78s ease both}
-@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.16s}.reveal.d3{animation-delay:.24s}.reveal.d4{animation-delay:.32s}
+@keyframes scrollReveal{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+.hero-location{animation:heroIn .8s .08s var(--ease) backwards}
+.hero h1{animation:heroIn .95s .18s var(--ease) backwards}
+.hero-tagline{animation:heroIn .85s .32s var(--ease) backwards}
+.hero-search{animation:heroIn .8s .44s var(--ease) backwards}
+.hero-phone{animation:heroIn .8s .56s var(--ease) backwards}
+.hero-trust{animation:heroIn .8s 1.02s var(--ease) backwards}
+@keyframes heroIn{from{opacity:0;transform:translateY(20px) scale(.985)}to{opacity:1;transform:none}}
+
+/* Category tiles pop in one after another */
+.cat-item{animation:catIn .6s var(--spring) backwards}
+@keyframes catIn{from{opacity:0;transform:translateY(14px) scale(.88)}to{opacity:1;transform:none}}
+.cat-item:nth-child(1){animation-delay:.62s}.cat-item:nth-child(2){animation-delay:.655s}
+.cat-item:nth-child(3){animation-delay:.69s}.cat-item:nth-child(4){animation-delay:.725s}
+.cat-item:nth-child(5){animation-delay:.76s}.cat-item:nth-child(6){animation-delay:.795s}
+.cat-item:nth-child(7){animation-delay:.83s}.cat-item:nth-child(8){animation-delay:.865s}
+.cat-item:nth-child(9){animation-delay:.9s}.cat-item:nth-child(10){animation-delay:.935s}
+.cat-item:nth-child(11){animation-delay:.97s}.cat-item:nth-child(12){animation-delay:1.005s}
 
 /* Stats strip */
 .stats-strip{background:var(--ink);padding:44px 0}
@@ -495,6 +507,72 @@ footer{background:#fff;border-top:1px solid var(--border);padding:56px 0 28px}
 
 /* Z-index */
 section,nav,footer,.ann-bar,.emergency,.cta-wrap,.stats-strip{position:relative;z-index:1}
+
+/* ══ iOS-style polish ══ */
+
+/* Kill the grey flash on tap and the 300ms delay */
+a,button,input,.scard,.cat-item,.loc-item,.sd-item,.city-tag,.price-card,.faq-q{
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+
+/* Press feedback: dips instantly, springs back on release — the native control feel.
+   The short transition-duration on :active is what makes the press feel immediate. */
+.scard,.price-card,.cat-item,.loc-item,.sd-item,.city-tag,.metric-card,.pill,.faq-item,
+.scard-btn,.nav-wa,.nav-call,.btn-wa-big,.emer-btn,.search-btn,.m-wa,.fab,
+.mobile-cta-bar a,.hero-phone,.cookie-acc,.cookie-dec,#btt,.area-badge{
+  transition:transform .55s var(--spring),box-shadow .45s var(--ease),
+             background .22s var(--ease),border-color .22s var(--ease),
+             color .22s var(--ease),opacity .22s var(--ease)}
+
+.scard:active,.price-card:active,.metric-card:active,.pill:active,
+.cat-item:active,.loc-item:active,.sd-item:active,.city-tag:active,.area-badge:active{
+  transform:scale(.97);transition-duration:.09s}
+.scard-btn:active,.nav-wa:active,.nav-call:active,.btn-wa-big:active,.emer-btn:active,
+.search-btn:active,.m-wa:active,.mobile-cta-bar a:active,.hero-phone:active,
+.cookie-acc:active,.cookie-dec:active,#btt:active{
+  transform:scale(.94);transition-duration:.09s}
+.fab:active{transform:scale(.9);transition-duration:.09s}
+
+/* Springier lifts on hover */
+.scard:hover{transform:translateY(-6px)}
+.price-card:hover,.metric-card:hover{transform:translateY(-4px)}
+.cat-item:hover,.loc-item:hover,.sd-item:hover{transform:translateY(-3px)}
+
+/* Frosted navigation — desktop only. Mobile stays opaque: backdrop-filter while
+   scrolling is what caused the jank reported earlier. Same reasoning for the
+   ambient hero glow: transform-only and composited, but kept off small screens. */
+@media(min-width:769px){
+  @keyframes glowDrift{0%,100%{transform:translate(0,0) scale(1)}
+                        50%{transform:translate(46px,34px) scale(1.09)}}
+  .hero::before{animation:glowDrift 19s ease-in-out infinite;will-change:transform}
+  .hero::after{animation:glowDrift 24s ease-in-out infinite reverse;will-change:transform}
+  nav{background:rgba(255,255,255,.72);
+      backdrop-filter:saturate(180%) blur(20px);
+      -webkit-backdrop-filter:saturate(180%) blur(20px);
+      transition:background .3s var(--ease),box-shadow .3s var(--ease)}
+  nav.scrolled{background:rgba(255,255,255,.82)}
+}
+
+/* Continuous corner radii on controls */
+.scard-btn,.search-btn{border-radius:14px}
+.nav-wa,.nav-call{border-radius:11px}
+.step-ico,.pill-ico,.price-step,.cat-icon,.sd-ico{border-radius:13px}
+.faq-item,.assure,.pill{border-radius:var(--radius-lg)}
+
+/* Focus ring — the hero search wrapper already shows focus, so skip its input */
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:none;box-shadow:0 0 0 4px rgba(27,79,216,.3)}
+.hero-search input:focus-visible{box-shadow:none}
+
+/* Mobile menu eases in like a sheet */
+.mobile-menu{transition:opacity .34s var(--ease),transform .34s var(--ease)}
+
+/* Honour the OS reduced-motion setting */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{animation:none;opacity:1}
+}
 
 /* Responsive */
 @media(max-width:1024px){
